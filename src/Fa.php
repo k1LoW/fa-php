@@ -82,7 +82,7 @@ class Fa
 
         if (count($this->allowChars) > 0 && $replaced != '') {
             $checked = false;
-            $this->message[] = 'chars';
+            $this->message[] = 'char';
         }
 
         foreach($this->checkFormats as $pattern) {
