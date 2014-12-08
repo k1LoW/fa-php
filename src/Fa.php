@@ -76,7 +76,7 @@ class Fa
         $checked = true;
         
         foreach($this->allowChars as $pattern) {
-            $re = Chars::{$pattern}();
+            $re = Chars::$pattern();
             $replaced = preg_replace($re, '', $replaced);
         }
 
