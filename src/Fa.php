@@ -38,22 +38,23 @@ class Fa
      *
      */
     public function char($patterns)
-        {
-            if (preg_match('/\+/', $patterns)) {
-                $patterns = explode('+', $patterns);
-            } else {
-                $patterns = array($patterns);
-            }
-            $this->allowChars = array_merge($this->allowChars, $patterns);
-            
-            return $this;
+    {
+        if (preg_match('/\+/', $patterns)) {
+            $patterns = explode('+', $patterns);
+        } else {
+            $patterns = array($patterns);
         }
+        $this->allowChars = array_merge($this->allowChars, $patterns);
+        
+        return $this;
+    }
 
     /**
      * format
      *
      */
-    public function format($patterns){
+    public function format($patterns)
+    {
         if (preg_match('/\+/', $patterns)) {
             $patterns = explode('+', $patterns);
         } else {
@@ -69,7 +70,8 @@ class Fa
      * assert
      *
      */
-    public function assert(){
+    public function assert()
+    {
         $replaced = $this->actual;
         $checked = true;
         
@@ -96,7 +98,8 @@ class Fa
 
     /***** formats ****/
     
-    public function notEmpty($value = null) {
+    public function notEmpty($value = null)
+    {
         if (!is_null($value)) {
             $this->actual = $value;
         }
@@ -104,7 +107,8 @@ class Fa
         return $this;
     }
     
-    public function int($value = null) {
+    public function int($value = null)
+    {
         if (!is_null($value)) {
             $this->actual = $value;
         }
@@ -112,7 +116,8 @@ class Fa
         return $this;
     }
     
-    public function range($value = null, $range = null) {
+    public function range($value = null, $range = null)
+    {
         if (is_null($range)) {
             $range = $value;
         } else {
@@ -126,7 +131,8 @@ class Fa
     }
 
     // simple email regexp
-    public function email($value = null) {
+    public function email($value = null)
+    {
         if (!is_null($value)) {
             $this->actual = $value;
         }
@@ -134,7 +140,8 @@ class Fa
         return $this;
     }
     
-    public function zipcode($value = null) {
+    public function zipcode($value = null)
+    {
         if (!is_null($value)) {
             $this->actual = $value;
         }
@@ -142,7 +149,8 @@ class Fa
         return $this;
     }
     
-    public function telNo($value = null) {
+    public function telNo($value = null)
+    {
         if (!is_null($value)) {
             $this->actual = $value;
         }

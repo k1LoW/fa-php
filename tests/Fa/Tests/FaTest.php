@@ -11,7 +11,8 @@ class FaTest extends \PHPUnit_Framework_TestCase
      * setUp
      *
      */
-    public function setUp(){
+    public function setUp()
+    {
         $this->testsetDir = dirname(__FILE__) . '/../../../fa/testsets/';
     }
     
@@ -20,7 +21,8 @@ class FaTest extends \PHPUnit_Framework_TestCase
      *
      * @dataProvider dataChars
      */
-    public function test_chars($char) {        
+    public function test_chars($char)
+    {        
         $testset = Yaml::parse($this->testsetDir . $char . '.yml');
         foreach($testset as $entry) {
             $actual = Fa::set($entry['input'])->char($char)->assert();
@@ -32,7 +34,8 @@ class FaTest extends \PHPUnit_Framework_TestCase
      * dataChars
      *
      */
-    public function dataChars(){
+    public function dataChars()
+    {
         return array(
             array('alpha'),
             array('digit'),
@@ -54,7 +57,8 @@ class FaTest extends \PHPUnit_Framework_TestCase
      * @dataProvider dataFormats
      *
      */
-    public function test_format($format){
+    public function test_format($format)
+    {
         $testset = Yaml::parse($this->testsetDir . $format . '.yml');
         foreach($testset as $entry) {
             $actual = Fa::set($entry['input'])->format($format)->assert();
@@ -69,7 +73,8 @@ class FaTest extends \PHPUnit_Framework_TestCase
      * dataFormats
      *
      */
-    public function dataFormats(){
+    public function dataFormats()
+    {
         return array(
             array('notEmpty'),
             array('int'),
@@ -83,7 +88,8 @@ class FaTest extends \PHPUnit_Framework_TestCase
      * test_range
      *
      */
-    public function test_range(){
+    public function test_range()
+    {
         $testset = Yaml::parse($this->testsetDir . 'range3.yml');
         foreach($testset as $entry) {
             $actual = Fa::set($entry['input'])->range(3)->assert();
